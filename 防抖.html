@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- //理论+伪代码+应用场景
+    //当持续触发事件时，在单位时间内，只执行最后一次
+        //搜索框的输入，异步请求 -->
+    <input type="text" >
+    <script>
+        const input  = document.querySelector('input')
+        input.addEventListener('input',function(e){
+            FnDebounce(e.target.value);
+        })
+        function debounce(delay){
+            let timer
+           
+            return function(value){
+                clearTimeout(timer)
+                timer = setTimeout(function(){
+                    console.log(value);
+                },delay)
+            }
+        }
+        let FnDebounce= debounce(1000)
+
+    
+    </script>
+</body>
+</html>
